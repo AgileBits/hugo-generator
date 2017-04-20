@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.5
 
 MAINTAINER Roustem <roustem@agilebits.com>
 
@@ -13,7 +13,7 @@ RUN apk add --no-cache \
 
 RUN gem install --no-document sass
 
-ENV HUGO_VERSION 0.19
+ARG HUGO_VERSION=0.20.1
 
 RUN mkdir -p /usr/local/src \
     && cd /usr/local/src \
