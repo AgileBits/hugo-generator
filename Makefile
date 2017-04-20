@@ -1,4 +1,4 @@
 .PHONY: build
-
+TAG ?= 0.20.1
 build:
-	docker build -t agilebitsinc/hugo-generator .
+	docker build --build-arg HUGO_VERSION=$(TAG) -t agilebitsinc/hugo-generator:$(TAG) .
